@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    
+    <div id="app">
+        <p>{{ mensagem }}</p>
+        <!-- Colocando : (dois pontos, o vue ja entende que é diretiva-->
+        <img :src="srcImg" v-bind:title="titleImg" />
+        <hr>
+        <a v-bind:href="url"> Vue </a>
+        <hr>
+        <p  v-text="'teste qualquer'"></p>
+        <p  v-html="testeParagrafo"></p>
+
+        <!--v-Model e v-if-->
+        <input type="text" v-model="textoDigitado">
+        <br>
+    </div>
+   
+    <script>
+        new Vue ({
+            el: '#app',
+            data: {
+                mensagem:'Teste de Mensagem', 
+                srcImg:'vuelogo.png',
+                titleImg:'Logo Vue',
+                url:"http://vuejs.org",
+                testeParagrafo: 'texto com paragrafo<br>...',  
+                textoDigitado:''    
+            },
+        })
+    </script>
+        
+</body>
+</html>
